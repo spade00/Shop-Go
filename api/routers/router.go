@@ -10,6 +10,7 @@ func Router() *gin.Engine {
 	userGroup := r.Group("/shop")
 	{
 		userGroup.GET("/Product", handlers.GetProduct)
+		userGroup.GET("/Order", handlers.GetShopCarInfo)
 	}
 	return r
 }

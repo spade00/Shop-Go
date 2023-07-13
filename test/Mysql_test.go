@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-func TestGorm(t *testing.T) {
+func TestMysql(t *testing.T) {
 	conn, err := sqlx.Open("mysql", "root:000000@tcp(localhost:3306)/shop")
 	if err != nil {
 		t.Fail()
