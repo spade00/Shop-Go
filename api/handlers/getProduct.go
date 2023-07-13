@@ -18,7 +18,7 @@ func GetProduct(c *gin.Context) {
 	var Switch []models.Product
 	var Ps4 []models.Product
 	var Ps5 []models.Product
-	queries.QueryProduct(&Switch, &Ps4, &Ps5)
+	queries.GetProduct(&Switch, &Ps4, &Ps5)
 	data := &ProductData{
 		Switch,
 		Ps4,

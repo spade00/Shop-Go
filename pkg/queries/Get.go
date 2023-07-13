@@ -7,8 +7,7 @@ import (
 	"fmt"
 )
 
-func QueryProduct(data *[]models.Product, data1 *[]models.Product, data2 *[]models.Product) {
-	fmt.Println(data)
+func GetProduct(data *[]models.Product, data1 *[]models.Product, data2 *[]models.Product) {
 	err := database.Db.Select(data, "select * from product where categori_id=1")
 	if err != nil {
 		fmt.Println(err)
@@ -26,9 +25,15 @@ func QueryProduct(data *[]models.Product, data1 *[]models.Product, data2 *[]mode
 	}
 }
 
-func QueryshopCarInfo(data *[]view.ShopCarInfo) {
-	fmt.Println(data)
+func GetshopCarInfo(data *[]view.ShopCarInfo) {
 	err := database.Db.Select(data, "select * from shopcarinfo where user_id=1")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+}
+func GetOrder(data *[]view.OrderProduct) {
+	err := database.Db.Select(data, "select * from `order_product` where user_id=1")
 	if err != nil {
 		fmt.Println(err)
 		return

@@ -9,9 +9,9 @@ import (
 	"net/http"
 )
 
-func GetShopCarInfo(c *gin.Context) {
-	var Info []view.ShopCarInfo
-	queries.GetshopCarInfo(&Info)
+func GetOrder(c *gin.Context) {
+	var Info []view.OrderProduct
+	queries.GetOrder(&Info)
 	jsonS, err := json.Marshal(Info)
 	if err != nil {
 		fmt.Println(err)
